@@ -20,6 +20,7 @@ import { Module } from '@nestjs/common';
 import path from 'path';
 import fs from 'fs';
 import process from 'process';
+import { FeishuBotAction } from "./feishubot.action";
 
 export * as webhook from './webhook';
 export * as ruliu from './ruliu';
@@ -42,6 +43,8 @@ if (isEnterpriseLevel) {
 }
 
 @Module({
-  imports: [],
+  imports: [
+    FeishuBotAction
+  ],
 })
 export class AutomationActionModule {}
